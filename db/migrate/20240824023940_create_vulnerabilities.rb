@@ -38,6 +38,7 @@ class CreateVulnerabilities < ActiveRecord::Migration[7.2]
       t.string :last_scanned_date
       t.string :service_description
       t.string :approved_false_positive_evidence
+      t.integer :status, default: 0
 
       t.references :vulnerability_scan
       t.references :admin_user

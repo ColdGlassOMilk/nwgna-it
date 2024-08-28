@@ -18,10 +18,15 @@ ActiveAdmin.register AdminUser do
 
     panel "Assigned Vulnerabilities" do
       table_for admin_user.vulnerabilities do
-        column :description do |v|
-          link_to v.description, admin_vulnerability_path(v)
+        column :id do |v|
+          link_to v.id, admin_vulnerability_path(v)
         end
+        column :description do |v|
+          link_to v.name, admin_vulnerability_path(v)
+        end
+        column :severity
         column :ip_address
+        column :target_tag
       end
     end
 

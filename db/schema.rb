@@ -62,6 +62,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_27_204529) do
     t.string "last_scanned_date"
     t.string "service_description"
     t.string "approved_false_positive_evidence"
+    t.integer "status", default: 0
     t.bigint "vulnerability_scan_id"
     t.bigint "admin_user_id"
     t.datetime "created_at", null: false
