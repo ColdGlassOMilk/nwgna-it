@@ -73,15 +73,15 @@ ActiveAdmin.register Vulnerability do
     end
 
     # Section for associated Vulnerability Updates
-    # panel "Status Updates" do
-    #   table_for vulnerability.vulnerability_updates.order(id: :desc) do
-    #     column :scan do |vupdate|
-    #       link_to vupdate.vulnerability_scan.name, admin_vulnerability_scan_path(vupdate.vulnerability_scan.id)
-    #     end
-    #     column :update_type
-    #     column :created_at
-    #   end
-    # end
+    panel "Scan Updates" do
+      table_for vulnerability.vulnerability_updates.order(id: :desc) do
+        column :scan do |vupdate|
+          link_to vupdate.vulnerability_scan.name, admin_vulnerability_scan_path(vupdate.vulnerability_scan.id)
+        end
+        column 'Update', :update_type
+        column :created_at
+      end
+    end
 
     # Section for associated Vulnerability Scans
     panel "Associated Vulnerability Scans" do
