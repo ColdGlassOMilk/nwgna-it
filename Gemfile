@@ -31,7 +31,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem 'activeadmin', '~> 3.2', '>= 3.2.4'
+gem 'activeadmin', '~> 3.2'
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'sassc', '~> 2.4'
 
