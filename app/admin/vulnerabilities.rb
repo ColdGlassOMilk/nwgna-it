@@ -22,6 +22,7 @@ ActiveAdmin.register Vulnerability do
   filter :name
   filter :os, as: :select, collection: proc { Vulnerability.pluck(:os).uniq.compact }
   filter :severity, as: :select, collection: proc { Vulnerability.pluck(:severity).uniq.compact }
+  filter :pci_status, as: :select, collection: proc { Vulnerability.pluck(:pci_status).uniq.compact }
   filter :ip_address
   filter :target_tag
   filter :status, as: :select, collection: proc { Vulnerability.statuses.map { |key, value| [key.humanize, value] } }, label: 'Status'
@@ -46,6 +47,7 @@ ActiveAdmin.register Vulnerability do
     column :ip_address
     column :target_tag
     column :os
+    column :pci_status
     column :discovered_date
     column 'Technician', :admin_user
     column :status do |vulnerability|
@@ -67,6 +69,7 @@ ActiveAdmin.register Vulnerability do
           )
         end
       end
+      row :evidence
       row :description
       row :solution
       # Add more fields as needed
